@@ -1,5 +1,5 @@
 <?php
-namespace Src\controllers;
+namespace Src\Controllers;
 
 class NotFoundController
 {

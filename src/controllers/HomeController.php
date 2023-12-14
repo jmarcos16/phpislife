@@ -1,11 +1,12 @@
 <?php
-namespace Src\controllers;
+namespace Src\Controllers;
 
 class HomeController
 {
     public function __invoke()
     {
-        echo 'HomeController';                
+        $value = 'Hello World!';
+        require_once __DIR__ . '/../../resource/views/home.php';
         die();
     }
 

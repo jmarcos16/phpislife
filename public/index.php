@@ -1,8 +1,8 @@
 <?php
 
-use Src\controllers\HomeController;
-use Src\controllers\PostController;
-use Src\controllers\NotFoundController;
+use Src\Controllers\HomeController;
+use Src\Controllers\PostController;
+use Src\Controllers\NotFoundController;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -12,6 +12,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 $routes = [
     'posts' => HomeController::class,
     'posts/{markdown}' => PostController::class,
+    'about' => HomeController::class,
 ];
 
 $uri = explode('/', $uri);
@@ -25,7 +26,7 @@ foreach ($routes as $route => $action) {
         $controller = new $action();
         $controller($uri[2]);
     }
-
-    $controller = new NotFoundController();
-    $controller();
 }
+
+$controller = new NotFoundController();
+$controller();
