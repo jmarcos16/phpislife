@@ -1,12 +1,11 @@
 <?php
 namespace Src\controllers;
 
-class HomeController
+class NotFoundController
 {
     public function __invoke()
     {
-        echo 'HomeController';                
+        echo '404';                
         die();
     }
-
 }
